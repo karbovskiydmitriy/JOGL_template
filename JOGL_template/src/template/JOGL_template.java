@@ -37,7 +37,7 @@ public class JOGL_template implements GLEventListener {
 
 	int vertexShader;
 	int fragmentShader;
-	int renderProgram = 0;
+	int renderProgram;
 
 	int timeLocation;
 	int screenSizeLocation1;
