@@ -100,7 +100,7 @@ public class JOGL_template implements GLEventListener {
 		animator = new Animator(glCanvas);
 		animator.start();
 
-		final JFrame frame = new JFrame("Test frame");
+		final JFrame frame = new JFrame("JOGL template");
 		frame.getContentPane().add(glCanvas);
 		frame.setSize(frame.getContentPane().getPreferredSize());
 		frame.addWindowListener(new WindowAdapter() {
