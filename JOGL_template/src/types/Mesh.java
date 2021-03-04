@@ -8,12 +8,10 @@ public class Mesh {
 
 	public int verticesCount;
 	public FloatBuffer vertices;
-	public FloatBuffer colors;
 
-	public Mesh(int trianglesCount, float[] vertices, float[] colors) {
+	public Mesh(int trianglesCount, float[] vertices) {
 		this.verticesCount = trianglesCount * 3;
 		this.vertices = Buffers.newDirectFloatBuffer(vertices);
-		this.colors = Buffers.newDirectFloatBuffer(colors);
 	}
 
 }

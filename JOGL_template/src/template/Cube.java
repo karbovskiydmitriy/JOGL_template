@@ -14,16 +14,6 @@ public abstract class Cube {
 		{ -100.0f, -100.0f, -100.0f },
 		{ -100.0f, 100.0f, -100.0f }};
 		
-	static float[][] cubeColors = new float[][] {
-		{ 0f, 0f, 0f },
-		{ 0f, 0f, 0f },
-		{ 0f, 0f, 0f },
-		{ 0f, 0f, 0f },
-		{ 0f, 0f, 0f },
-		{ 0f, 0f, 0f },
-		{ 0f, 0f, 0f },
-		{ 0f, 0f, 0f }};
-
 	static int[][] cubeTriangles = new int[][] {
 		{ 2, 3, 1 },
 		{ 2, 1, 0 },
@@ -38,6 +28,6 @@ public abstract class Cube {
 		{ 4, 2, 0 },
 		{ 4, 0, 6 }};
 
-	public static CompressedMesh cubeMesh = new CompressedMesh(cubeVertices.length, cubeVertices, cubeColors, cubeTriangles);
+	public static CompressedMesh cubeMesh = new CompressedMesh(cubeVertices.length, cubeVertices, cubeTriangles);
 	
 }
