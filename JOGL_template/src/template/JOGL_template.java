@@ -41,6 +41,7 @@ public class JOGL_template implements GLEventListener {
 
 	int verticesVBO;
 	int indicesVBO;
+	int verticesCount;
 	int vertexShader;
 	int fragmentShader;
 	int renderProgram;
@@ -80,14 +81,14 @@ public class JOGL_template implements GLEventListener {
 		gl2.glGenBuffers(1, buffer, 0);
 		verticesVBO = buffer[0];
 		gl2.glBindBuffer(GL_ARRAY_BUFFER, verticesVBO);
-		gl2.glBufferData(GL_ARRAY_BUFFER, cubeVertices.length * 4, FloatBuffer.wrap(cubeVertices),
-				GL_STATIC_DRAW);
+		gl2.glBufferData(GL_ARRAY_BUFFER, cubeVertices.length * 4, FloatBuffer.wrap(cubeVertices), GL_STATIC_DRAW);
 
 		gl2.glGenBuffers(1, buffer, 0);
 		indicesVBO = buffer[0];
 		gl2.glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indicesVBO);
-		gl2.glBufferData(GL_ELEMENT_ARRAY_BUFFER, cubeIndices.length * 4, IntBuffer.wrap(cubeIndices),
-				GL_STATIC_DRAW);
+		gl2.glBufferData(GL_ELEMENT_ARRAY_BUFFER, cubeIndices.length * 4, IntBuffer.wrap(cubeIndices), GL_STATIC_DRAW);
+
+		verticesCount = cubeIndices.length;
 	}
 
 	@Override
@@ -250,7 +251,7 @@ public class JOGL_template implements GLEventListener {
 		gl2.glVertexPointer(3, GL_FLOAT, 0, 0);
 		gl2.glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, indicesVBO);
 		gl2.glEnableClientState(GL_VERTEX_ARRAY);
-		gl2.glDrawElements(GL_TRIANGLES, 24, GL_UNSIGNED_INT, 0);
+		gl2.glDrawElements(GL_TRIANGLES, verticesCount, GL_UNSIGNED_INT, 0);
 		gl2.glDisableClientState(GL_VERTEX_ARRAY);
 
 		gl2.glUseProgram(0);
